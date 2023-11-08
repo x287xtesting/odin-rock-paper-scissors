@@ -1,0 +1,11 @@
+body {
+	background-color: var(--bg-clr-body);
+	font-family: var(--ff-primary);
+	color: var(--clr-text-primary);
+	line-height: var(--line-height);
+	font-size: var(--fs-paragraph);
+}
+
+em {
+	font-weight: var(--fw-bold);
+}

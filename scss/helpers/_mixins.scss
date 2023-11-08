@@ -1,0 +1,15 @@
+@use "sass:math";
+@use "./variables";
+
+@mixin above($breakpoint) {
+  @if math.is-unitless($breakpoint) {
+    @error "Number #{$breakpoint} is unitless";
+  }
+  @media (min-width: $breakpoint){
+    @content;
+  }
+}
+
+@mixin tablet-up(){
+  @include above(var(--tablet-breakpoint));
+}

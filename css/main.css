@@ -1,3 +1,41 @@
+:root {
+  --bg-clr-body: #272829;
+  --bg-clr-card: #61677a;
+  --clr-text-primary: #d8d9da;
+  --clr-text-accent: #fff6e0;
+  --clr-player: #f96666;
+  --clr-computer: #ea906c;
+  --ff-primary: "Roboto Mono", monospace;
+  --ff-secondary: "Poppins", sans-serif;
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --line-height: 1.46;
+  --fs-paragraph: 1.5rem;
+  --fs-heading: 2rem;
+  --fs-emoji: 3.75rem;
+  --fs-score: 3rem;
+  --tablet-breakpoint: 48rem;
+}
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-clr-body);
+  font-family: var(--ff-primary);
+  color: var(--clr-text-primary);
+  line-height: var(--line-height);
+  font-size: var(--fs-paragraph);
+}
+
+em {
+  font-weight: var(--fw-bold);
+}
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,82 @@
+@use "../helpers" as h;
+
+.btn {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent;
+
+	&--emoji {
+		background-color: var(--bg-clr-card);
+		aspect-ratio: 1 / 1;
+		display: grid;
+		place-content: center;
+		transition: background-color 100ms ease-in-out;
+
+		&:is(:focus-visible) {
+			background-color: var(--bg-clr-card-focus);
+		}
+		&:is(:hover) {
+			background-color: var(--bg-clr-card-hover);
+		}
+		&:active {
+			background-color: var(--clr-text-primary);
+		}
+	}
+
+	&--play {
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+		display: grid;
+		place-content: center;
+		background-color: var(--bg-clr-body);
+
+		& > svg {
+			width: clamp(3.5rem, 20vw, 5rem);
+			padding: clamp(0.5em, 15vw, 1em);
+			fill: var(--clr-text-accent);
+			transition: all 200ms ease-in-out;
+		}
+		&:hover > svg {
+			fill: var(--clr-player);
+			scale: 1.2;
+		}
+
+		&.clicked {
+			animation: animateBtn 800ms cubic-bezier(0.4, -0.6, 0.28, 0.97);
+			pointer-events: none;
+			> svg {
+				animation: hideSvg 1s cubic-bezier(0.4, -0.6, 0.28, 0.97) forwards;
+			}
+		}
+	}
+
+	&--bounce {
+		@include h.bounce;
+	}
+}
+
+@keyframes animateBtn {
+	from {
+		scale: 1;
+	}
+
+	50% {
+		scale: 1.1;
+	}
+}
+
+@keyframes hideSvg {
+	from {
+		fill: var(--clr-player);
+	}
+	50% {
+		scale: 1.2;
+	}
+	to {
+		scale: 0;
+		fill: red;
+	}
+}

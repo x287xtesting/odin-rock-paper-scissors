@@ -1,0 +1,7 @@
+@use "../helpers/" as h;
+
+.container {
+	width: calc(100% - (var(--padding-inline) * 2));
+	max-width: h.rem(1200);
+	margin: 0 auto;
+}

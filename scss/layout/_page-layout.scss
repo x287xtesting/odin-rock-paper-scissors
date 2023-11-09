@@ -1,0 +1,143 @@
+@use "../helpers/" as h;
+
+section {
+	padding-block: 3rem;
+}
+
+.scroller {
+	@include h.tablet-down {
+		height: 100lvh;
+		overflow-y: scroll;
+
+		scroll-snap-type: y mandatory;
+
+		section {
+			scroll-snap-align: start;
+			scroll-snap-stop: always;
+		}
+
+		@include h.hide-scroll-bar;
+	}
+}
+
+.intro {
+	@include h.tablet-down {
+		display: grid;
+		justify-content: center;
+		align-content: space-between;
+		text-align: center;
+		height: 100lvh;
+		padding-block: calc(5rem - 8vw);
+
+		p {
+			max-width: 30ch;
+		}
+	}
+
+	@include h.tablet-up {
+		padding-bottom: 0;
+	}
+}
+
+.grid {
+	display: grid;
+	gap: var(--gap);
+
+	@include h.tablet-down {
+		min-height: 100lvh;
+	}
+
+	@include h.tablet-up {
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+	}
+
+	&__column {
+		display: grid;
+		gap: var(--gap);
+
+		&--text {
+			&__result-container {
+				display: grid;
+				height: min-content;
+				gap: var(--gap-small);
+				@include h.tablet-down {
+					text-align: center;
+				}
+
+				@include h.tablet-up {
+					order: 1;
+				}
+			}
+
+			&__score-container {
+				display: grid;
+				grid-auto-flow: column;
+				justify-content: space-evenly;
+				height: min-content;
+
+				&__score {
+					display: grid;
+					text-align: center;
+				}
+			}
+		}
+		&--buttons {
+			position: relative;
+			width: 90%;
+			height: min-content;
+
+			@include h.tablet-down {
+				margin: 0 auto;
+			}
+			justify-self: end;
+			max-width: h.rem(300);
+			@include h.desktop-up {
+				max-width: h.rem(400);
+			}
+
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+
+			:nth-child(1) {
+				grid-column: 1 / span 2;
+			}
+
+			:nth-child(2) {
+				grid-column: 3 / span 2;
+			}
+
+			:nth-child(3) {
+				grid-column: 2 / span 2;
+			}
+
+			&__play-button-wrapper {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+}
+
+// landscape on phones
+@include h.tablet-down {
+	@media (orientation: landscape) {
+		.grid {
+			--gap: 0.5em;
+			--gap-small: 0.25em;
+
+			grid-template-columns: repeat(2, 1fr);
+			align-items: center;
+
+			&__column--text__result-container {
+				order: 1;
+			}
+
+			&__column--buttons {
+				max-width: h.rem(260);
+			}
+		}
+	}
+}

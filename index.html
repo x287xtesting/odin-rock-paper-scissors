@@ -4,7 +4,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Rock Paper Scissors</title>
-		<!-- <script defer src="app.js"></script> -->
 		<link rel="stylesheet" href="/css/main.css" />
 
 		<!-- Google Fonts -->
@@ -14,19 +13,70 @@
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&family=Roboto+Mono:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
-
-		<!-- Icons -->
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-		/>
-		<style>
-			.material-symbols-outlined {
-				font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
-			}
-		</style>
 	</head>
 	<body>
-		
+		<main class="container scroller">
+			<section class="intro">
+				<h1>Rock Paper Scissors</h1>
+				<p id="toBeMoved">
+					You have <em>three</em> seconds to choose your weapon of choice, the
+					first to score <em>five</em> points wins.
+				</p>
+				<button id="downBtn" class="fs-emoji hide btn btn--bounce">👇</button>
+			</section>
+			<section class="grid" id="scrollIntoView">
+				<div id="moveDestination" class="grid__column grid__column--text">
+					<div class="grid__column--text__result-container">
+						<!-- place holder-->
+						<p class="fs-large clr-accent" id="result">You win...</p>
+						<p>
+							<span class="clr-player fs-large fw-bold" id="playerSelection"
+								>Rock</span
+							>
+							<span id="betweenSelections">looses to</span>
+							<span class="clr-computer fs-large fw-bold" id="computerSelection"
+								>Paper</span
+							>
+						</p>
+					</div>
+					<div class="grid__column--text__score-container ff-secondary">
+						<div class="grid__column--text__score-container__score">
+							<span id="playerScoreNumber" class="fs-score fw-bold clr-player"
+								>5</span
+							>
+							<span id="playerScoreLabel" class="fw-light clr-player">You</span>
+						</div>
+						<div class="grid__column--text__score-container__score">
+							<span
+								id="computerScoreNumber"
+								class="fw-bold fs-score clr-computer"
+								>2</span
+							>
+							<span id="computerScoreLabel" class="fw-light clr-computer"
+								>Computer</span
+							>
+						</div>
+					</div>
+				</div>
+				<div class="grid__column grid__column--buttons">
+					<button class="btn btn--emoji fs-emoji" id="rockBtn">🪨</button>
+					<button class="btn btn--emoji fs-emoji" id="paperBtn">🗞️</button>
+					<button class="btn btn--emoji fs-emoji" id="scissorsBtn">✂️</button>
+					<div class="grid__column--buttons__play-button-wrapper">
+						<button class="btn btn--play clr-accent" id="playBtn">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+								<path
+									d="M311.869-185.413v-589.174L775.066-480 311.869-185.413Z"
+								/>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- <script src="js/app.js"></script> -->
+		<script src="js/move-paragraph.js"></script>
+		<script src="js/down-button.js"></script>
 	</body>
 </html>

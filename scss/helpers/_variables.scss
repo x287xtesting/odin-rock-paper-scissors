@@ -1,10 +1,10 @@
-@use "./functions" as f;
-
-$tablet-breakpoint: f.rem(768);
+@use "./mixins" as m;
 
 :root {
 	--bg-clr-body: #272829;
 	--bg-clr-card: #61677a;
+	--bg-clr-card-focus: hsl(226, 11%, 35%);
+	--bg-clr-card-hover: #6d707e;
 	--clr-text-primary: #d8d9da;
 	--clr-text-accent: #fff6e0;
 	--clr-player: #f96666;
@@ -18,12 +18,30 @@ $tablet-breakpoint: f.rem(768);
 	--fw-regular: 400;
 	--fw-bold: 700;
 
-	--line-height: 1.46;
+	--line-height: 1.5;
 
+	--padding-inline: 1rem;
+	@include m.tablet-up {
+		--padding-inline: 4em;
+	}
+
+	--fs-heading: 1.75rem;
 	--fs-paragraph: 1.5rem;
-	--fs-heading: 2rem;
-	--fs-emoji: 3.75rem;
-	--fs-score: 3rem; 
+	--fs-emoji: 3rem;
+	--fs-score: 3rem;
 
-	--tablet-breakpoint: #{$tablet-breakpoint};
+	@include m.tablet-up {
+		--fs-heading: 2rem;
+		--fs-emoji: 3.75rem;
+	}
+
+	@include m.desktop-up {
+		--fs-paragraph: 2rem;
+		--fs-heading: 3rem;
+		--fs-emoji: 5rem;
+		--fs-score: 4rem;
+	}
+
+	--gap: 1em;
+	--gap-small: 0.75em;
 }

@@ -1,0 +1,65 @@
+body {
+	&::before,
+	&::after {
+		content: "";
+		width: 50%;
+		height: 100vh;
+		position: fixed;
+		z-index: 1000;
+		background-color: rgba(var(--clr-text-primary-rgb), 0.17);
+		backdrop-filter: blur(0.5rem);
+		-webkit-backdrop-filter: blur(0.5rem);
+	}
+	&::before {
+		inset: 0 auto 0 0;
+		transform: translateX(-100%);
+	}
+	&::after {
+		inset: 0 0 0 auto;
+		transform: translateX(100%);
+	}
+}
+
+body.dropCurtains {
+	&::before {
+		animation: bounce-left 1s ease-in-out forwards;
+	}
+	&::after {
+		animation: bounce-right 1s ease-in-out forwards;
+	}
+}
+
+@keyframes bounce-left {
+	20% {
+		transform: translateX(0);
+	}
+	40% {
+		transform: translateX(-30%);
+	}
+	60% {
+		transform: translateX(0);
+	}
+	80% {
+		transform: translateX(-10%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+@keyframes bounce-right {
+	20% {
+		transform: translateX(0);
+	}
+	40% {
+		transform: translateX(30%);
+	}
+	60% {
+		transform: translateX(0);
+	}
+	80% {
+		transform: translateX(10%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}

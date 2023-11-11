@@ -1,0 +1,19 @@
+#countdownSpan.animateCountdown {
+	display: block;
+	animation: animateCountdown var(--countdown-speed) ease-in-out infinite;
+}
+
+@keyframes animateCountdown {
+	from {
+		scale: 0;
+		opacity: 0;
+	}
+	50% {
+		scale: 1;
+		opacity: 1;
+	}
+	to {
+		scale: 0;
+		opacity: 0;
+	}
+}

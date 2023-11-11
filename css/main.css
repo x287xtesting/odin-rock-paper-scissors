@@ -346,14 +346,14 @@ section {
   scale: 1.2;
 }
 .btn--play.hideBtn {
-  animation: animateBtn 400ms cubic-bezier(0.6, 0.14, 0.49, 0.9);
+  animation: animateBtn calc(var(--countdown-speed) * 0.5) cubic-bezier(0.6, 0.14, 0.49, 0.9);
   pointer-events: none;
 }
 .btn--play.hideBtn > svg {
-  animation: hideSvg 250ms cubic-bezier(0.6, 0.14, 0.49, 0.9) forwards;
+  animation: hideSvg calc(var(--countdown-speed) * 0.5) cubic-bezier(0.6, 0.14, 0.49, 0.9) forwards;
 }
 .btn--play.showBtn > svg {
-  animation: showSvg 250ms ease-in-out;
+  animation: showSvg calc(var(--countdown-speed) * 0.5) ease-in-out;
 }
 .btn--bounce {
   animation: bounce 1s infinite;
@@ -388,9 +388,6 @@ section {
   from {
     fill: var(--clr-player);
   }
-  50% {
-    scale: 1.2;
-  }
   to {
     scale: 0;
     fill: var(--clr-dark-red);
@@ -402,6 +399,25 @@ section {
   }
   to {
     scale: 1;
+  }
+}
+#countdownSpan.animateCountdown {
+  display: block;
+  animation: animateCountdown var(--countdown-speed) ease-in-out infinite;
+}
+
+@keyframes animateCountdown {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  50% {
+    scale: 1;
+    opacity: 1;
+  }
+  to {
+    scale: 0;
+    opacity: 0;
   }
 }
 

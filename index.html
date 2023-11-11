@@ -97,15 +97,20 @@
 		<script>
 			const playBtn = document.querySelector("#playBtn");
 			const rock = document.querySelector("#rock");
+			const countdownEl = document.querySelector("#countdownSpan");
 			playBtn.onclick = () => {
 				playBtn.classList.add("hideBtn");
 				playBtn.classList.remove("showBtn");
+				countdownEl.classList.remove("display-none");
+				countdownEl.classList.add("animateCountdown");
 			};
 			rock.onclick = () => {
 				if (playBtn.classList.contains("hideBtn")) {
 					playBtn.classList.remove("hideBtn");
 					playBtn.classList.add("showBtn");
 				}
+				countdownEl.classList.add("display-none");
+				countdownEl.classList.remove("animateCountdown");
 			};
 		</script>
 	</body>

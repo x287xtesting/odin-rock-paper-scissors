@@ -97,6 +97,7 @@
 		<script>
 			const playBtn = document.querySelector("#playBtn");
 			const rock = document.querySelector("#rock");
+			const paper = document.querySelector("#paper");
 			const countdownEl = document.querySelector("#countdownSpan");
 			playBtn.onclick = () => {
 				playBtn.classList.add("hideBtn");
@@ -111,6 +112,9 @@
 				}
 				countdownEl.classList.add("display-none");
 				countdownEl.classList.remove("animateCountdown");
+			};
+			paper.onclick = () => {
+				document.body.classList.add("dropCurtains");
 			};
 		</script>
 	</body>

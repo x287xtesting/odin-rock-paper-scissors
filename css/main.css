@@ -4,7 +4,9 @@
   --bg-clr-card-focus: hsl(226, 11%, 35%);
   --bg-clr-card-hover: #6d707e;
   --clr-text-primary: #d8d9da;
+  --clr-text-primary-rgb: 216, 217, 218;
   --clr-text-accent: #fff6e0;
+  --clr-text-accent-rgb: 255, 246, 224;
   --clr-player: #f96666;
   --clr-dark-red: red;
   --clr-computer: #ea906c;
@@ -418,6 +420,66 @@ section {
   to {
     scale: 0;
     opacity: 0;
+  }
+}
+body::before, body::after {
+  content: "";
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba(var(--clr-text-primary-rgb), 0.17);
+  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+}
+body::before {
+  inset: 0 auto 0 0;
+  transform: translateX(-100%);
+}
+body::after {
+  inset: 0 0 0 auto;
+  transform: translateX(100%);
+}
+
+body.dropCurtains::before {
+  animation: bounce-left 1s ease-in-out forwards;
+}
+body.dropCurtains::after {
+  animation: bounce-right 1s ease-in-out forwards;
+}
+
+@keyframes bounce-left {
+  20% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-30%);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes bounce-right {
+  20% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(30%);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 

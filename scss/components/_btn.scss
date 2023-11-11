@@ -34,6 +34,8 @@
 		background-color: var(--bg-clr-body);
 
 		& > svg {
+			// prevent svg from being click event target
+			pointer-events: none;
 			width: clamp(3.5rem, 20vw, 5rem);
 			padding: clamp(0.5em, 15vw, 1em);
 			fill: var(--clr-text-accent);

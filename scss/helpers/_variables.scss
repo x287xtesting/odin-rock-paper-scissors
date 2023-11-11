@@ -36,10 +36,10 @@
 	}
 
 	@include m.desktop-up {
-		--fs-paragraph: 2rem;
-		--fs-large: 3rem;
-		--fs-emoji: 5rem;
-		--fs-score: 4rem;
+		--fs-paragraph: calc(2rem * 0.9);
+		--fs-large: calc(3rem * 0.9);
+		--fs-emoji: calc(5rem * 0.9);
+		--fs-score: calc(4rem * 0.9);
 	}
 
 	--gap: 1em;

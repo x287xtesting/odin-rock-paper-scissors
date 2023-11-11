@@ -46,11 +46,16 @@
 			scale: 1.2;
 		}
 
-		&.clicked {
-			animation: animateBtn 800ms cubic-bezier(0.4, -0.6, 0.28, 0.97);
+		&.hideBtn {
+			animation: animateBtn 400ms cubic-bezier(0.6, 0.14, 0.49, 0.9);
 			pointer-events: none;
 			> svg {
-				animation: hideSvg 1s cubic-bezier(0.4, -0.6, 0.28, 0.97) forwards;
+				animation: hideSvg 250ms cubic-bezier(0.6, 0.14, 0.49, 0.9) forwards;
+			}
+		}
+		&.showBtn {
+			> svg {
+				animation: showSvg 250ms ease-in-out;
 			}
 		}
 	}
@@ -80,5 +85,14 @@
 	to {
 		scale: 0;
 		fill: red;
+	}
+}
+
+@keyframes showSvg {
+	from {
+		scale: 0;
+	}
+	to {
+		scale: 1;
 	}
 }

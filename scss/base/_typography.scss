@@ -6,8 +6,7 @@ body {
 	font-size: var(--fs-paragraph);
 }
 
-h1,
-.fs-large {
+h1 {
 	font-size: var(--fs-large);
 	font-family: var(--ff-secondary);
 }
@@ -33,9 +32,14 @@ h1,
 	font-size: var(--fs-emoji);
 }
 
+.fs-large {
+	font-size: var(--fs-large);
+}
+
 .ff-secondary {
 	font-family: var(--ff-secondary);
 }
+
 .fw-bold {
 	font-weight: var(--fw-bold);
 }

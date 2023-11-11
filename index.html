@@ -30,11 +30,15 @@
 						<!-- place holder-->
 						<p class="fs-large clr-accent" id="result">You win...</p>
 						<p>
-							<span class="clr-player fs-large fw-bold" id="playerSelection"
+							<span
+								class="clr-player fs-large fw-bold ff-secondary"
+								id="playerSelection"
 								>Rock</span
 							>
 							<span id="betweenSelections">looses to</span>
-							<span class="clr-computer fs-large fw-bold" id="computerSelection"
+							<span
+								class="clr-computer fs-large fw-bold ff-secondary"
+								id="computerSelection"
 								>Paper</span
 							>
 						</p>
@@ -82,5 +86,19 @@
 		<!-- <script src="js/app.js"></script> -->
 		<script src="js/move-paragraph.js"></script>
 		<script src="js/down-button.js"></script>
+		<script>
+			const playBtn = document.querySelector("#playBtn");
+			const rock = document.querySelector("#rock");
+			playBtn.onclick = () => {
+				playBtn.classList.add("hideBtn");
+				playBtn.classList.remove("showBtn");
+			};
+			rock.onclick = () => {
+				if (playBtn.classList.contains("hideBtn")) {
+					playBtn.classList.remove("hideBtn");
+					playBtn.classList.add("showBtn");
+				}
+			};
+		</script>
 	</body>
 </html>

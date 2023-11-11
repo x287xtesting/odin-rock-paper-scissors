@@ -6,6 +6,7 @@
   --clr-text-primary: #d8d9da;
   --clr-text-accent: #fff6e0;
   --clr-player: #f96666;
+  --clr-dark-red: red;
   --clr-computer: #ea906c;
   --ff-primary: "Roboto Mono", monospace;
   --ff-secondary: "Poppins", sans-serif;
@@ -22,6 +23,7 @@
   --gap: 1em;
   --gap-small: 0.75em;
   --gap-smallest: 0.25em;
+  --countdown-speed: 500ms;
 }
 @media (min-width: 50.0625rem) {
   :root {
@@ -112,6 +114,10 @@ h1,
   color: var(--clr-text-accent);
 }
 
+.clr-dark-red {
+  color: var(--clr-dark-red);
+}
+
 em {
   font-weight: var(--fw-bold);
   color: var(--clr-text-accent);
@@ -130,12 +136,6 @@ em::selection {
   background-color: var(--bg-clr-card);
 }
 
-@media (min-width: 50.0625rem) {
-  .hide {
-    display: none;
-  }
-}
-
 .align-center {
   display: flex;
   align-items: center;
@@ -148,6 +148,10 @@ em::selection {
 
 .gap-smallest {
   gap: var(--gap-smallest);
+}
+
+.display-none {
+  display: none;
 }
 
 .container {
@@ -366,6 +370,11 @@ section {
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
+@media (min-width: 50.0625rem) {
+  .btn--bounce {
+    display: none;
+  }
+}
 
 @keyframes animateBtn {
   from {
@@ -384,7 +393,7 @@ section {
   }
   to {
     scale: 0;
-    fill: red;
+    fill: var(--clr-dark-red);
   }
 }
 @keyframes showSvg {

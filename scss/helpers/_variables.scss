@@ -8,6 +8,7 @@
 	--clr-text-primary: #d8d9da;
 	--clr-text-accent: #fff6e0;
 	--clr-player: #f96666;
+	--clr-dark-red: red;
 	--clr-computer: #ea906c;
 
 	--ff-primary: "Roboto Mono", monospace;
@@ -45,4 +46,6 @@
 	--gap: 1em;
 	--gap-small: 0.75em;
 	--gap-smallest: 0.25em;
+
+	--countdown-speed: 500ms;
 }

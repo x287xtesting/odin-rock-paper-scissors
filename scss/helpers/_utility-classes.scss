@@ -1,11 +1,5 @@
 @use "./mixins" as m;
 
-.hide {
-	@include m.tablet-up {
-		display: none;
-	}
-}
-
 .align-center {
 	display: flex;
 	align-items: center;
@@ -18,4 +12,8 @@
 
 .gap-smallest {
 	gap: var(--gap-smallest);
+}
+
+.display-none {
+	display: none;
 }

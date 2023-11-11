@@ -62,6 +62,9 @@
 
 	&--bounce {
 		@include h.bounce;
+		@include h.tablet-up {
+			display: none;
+		}
 	}
 }
 
@@ -84,7 +87,7 @@
 	}
 	to {
 		scale: 0;
-		fill: red;
+		fill: var(--clr-dark-red);
 	}
 }
 

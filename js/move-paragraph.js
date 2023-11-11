@@ -2,7 +2,8 @@ const toBeMoved = document.querySelector("#toBeMoved");
 const moveDestination = document.querySelector("#moveDestination");
 const home = document.querySelector(".intro");
 
-const mq = window.matchMedia("(min-width: 48.0625rem)");
+// tablet-breakpoint + 1px
+const mq = window.matchMedia("(min-width: 50.0625rem)");
 
 addEventListener("DOMContentLoaded", moveParagraph(mq));
 mq.addEventListener("change", moveParagraph);

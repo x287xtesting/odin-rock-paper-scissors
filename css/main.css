@@ -15,28 +15,29 @@
   --fw-bold: 700;
   --line-height: 1.5;
   --padding-inline: 1rem;
-  --fs-heading: 1.75rem;
+  --fs-large: 1.75rem;
   --fs-paragraph: 1.5rem;
   --fs-emoji: 3rem;
   --fs-score: 3rem;
   --gap: 1em;
   --gap-small: 0.75em;
+  --gap-smallest: 0.25em;
 }
-@media (min-width: 48.0625rem) {
+@media (min-width: 50.0625rem) {
   :root {
     --padding-inline: 4em;
   }
 }
-@media (min-width: 48.0625rem) {
+@media (min-width: 50.0625rem) {
   :root {
-    --fs-heading: 2rem;
+    --fs-large: 2rem;
     --fs-emoji: 3.75rem;
   }
 }
 @media (min-width: 75.0625rem) {
   :root {
     --fs-paragraph: 2rem;
-    --fs-heading: 3rem;
+    --fs-large: 3rem;
     --fs-emoji: 5rem;
     --fs-score: 4rem;
   }
@@ -59,7 +60,7 @@ body {
 
 h1,
 .fs-large {
-  font-size: var(--fs-heading);
+  font-size: var(--fs-large);
   font-family: var(--ff-secondary);
 }
 
@@ -126,10 +127,24 @@ em::selection {
   background-color: var(--bg-clr-card);
 }
 
-@media (min-width: 48.0625rem) {
+@media (min-width: 50.0625rem) {
   .hide {
     display: none;
   }
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.gap-smallest {
+  gap: var(--gap-smallest);
 }
 
 .container {
@@ -139,10 +154,10 @@ em::selection {
 }
 
 section {
-  padding-block: 3rem;
+  padding-block: 2em;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 50rem) {
   .scroller {
     height: 100lvh;
     overflow-y: scroll;
@@ -163,20 +178,20 @@ section {
   }
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 50rem) {
   .intro {
     display: grid;
     justify-content: center;
     align-content: space-between;
     text-align: center;
     height: 100lvh;
-    padding-block: calc(5rem - 8vw);
+    padding-block: clamp(1em, 10vh, 2em);
   }
   .intro p {
     max-width: 30ch;
   }
 }
-@media (min-width: 48.0625rem) {
+@media (min-width: 50.0625rem) {
   .intro {
     padding-bottom: 0;
   }
@@ -186,12 +201,12 @@ section {
   display: grid;
   gap: var(--gap);
 }
-@media (max-width: 48rem) {
+@media (max-width: 50rem) {
   .grid {
     min-height: 100lvh;
   }
 }
-@media (min-width: 48.0625rem) {
+@media (min-width: 50.0625rem) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -206,12 +221,12 @@ section {
   height: min-content;
   gap: var(--gap-small);
 }
-@media (max-width: 48rem) {
+@media (max-width: 50rem) {
   .grid__column--text__result-container {
     text-align: center;
   }
 }
-@media (min-width: 48.0625rem) {
+@media (min-width: 50.0625rem) {
   .grid__column--text__result-container {
     order: 1;
   }
@@ -221,6 +236,11 @@ section {
   grid-auto-flow: column;
   justify-content: space-evenly;
   height: min-content;
+}
+@media (max-width: 18.75rem) {
+  .grid__column--text__score-container {
+    grid-auto-flow: row;
+  }
 }
 .grid__column--text__score-container__score {
   display: grid;
@@ -235,7 +255,7 @@ section {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
-@media (max-width: 48rem) {
+@media (max-width: 50rem) {
   .grid__column--buttons {
     margin: 0 auto;
   }
@@ -261,10 +281,11 @@ section {
   transform: translate(-50%, -50%);
 }
 
-@media (max-width: 48rem) and (orientation: landscape) {
+@media (max-width: 50rem) and (orientation: landscape) {
   .grid {
-    --gap: 0.5em;
-    --gap-small: 0.25em;
+    --gap: clamp(0.5em, 5vh, 1em);
+    --gap-small: clamp(0.25em, 5vh, 0.75em);
+    padding-block: 1rem;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }

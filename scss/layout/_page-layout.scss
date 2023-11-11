@@ -1,7 +1,7 @@
 @use "../helpers/" as h;
 
 section {
-	padding-block: 3rem;
+	padding-block: 2em;
 }
 
 .scroller {
@@ -27,7 +27,7 @@ section {
 		align-content: space-between;
 		text-align: center;
 		height: 100lvh;
-		padding-block: calc(5rem - 8vw);
+		padding-block: clamp(1em, 10vh, 2em);
 
 		p {
 			max-width: 30ch;
@@ -75,6 +75,10 @@ section {
 				grid-auto-flow: column;
 				justify-content: space-evenly;
 				height: min-content;
+
+				@media (max-width: h.rem(300)) {
+					grid-auto-flow: row;
+				}
 
 				&__score {
 					display: grid;
@@ -125,8 +129,10 @@ section {
 @include h.tablet-down {
 	@media (orientation: landscape) {
 		.grid {
-			--gap: 0.5em;
-			--gap-small: 0.25em;
+			--gap: clamp(0.5em, 5vh, 1em);
+			--gap-small: clamp(0.25em, 5vh, 0.75em);
+
+			padding-block: 1rem;
 
 			grid-template-columns: repeat(2, 1fr);
 			align-items: center;

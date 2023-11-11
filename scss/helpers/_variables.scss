@@ -25,23 +25,24 @@
 		--padding-inline: 4em;
 	}
 
-	--fs-heading: 1.75rem;
+	--fs-large: 1.75rem;
 	--fs-paragraph: 1.5rem;
 	--fs-emoji: 3rem;
 	--fs-score: 3rem;
 
 	@include m.tablet-up {
-		--fs-heading: 2rem;
+		--fs-large: 2rem;
 		--fs-emoji: 3.75rem;
 	}
 
 	@include m.desktop-up {
 		--fs-paragraph: 2rem;
-		--fs-heading: 3rem;
+		--fs-large: 3rem;
 		--fs-emoji: 5rem;
 		--fs-score: 4rem;
 	}
 
 	--gap: 1em;
 	--gap-small: 0.75em;
+	--gap-smallest: 0.25em;
 }

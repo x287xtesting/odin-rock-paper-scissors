@@ -16,6 +16,11 @@ const betweenChoices = {
   tie: "nutralizes",
 }
 
+const initalScores = {
+  computer: "❔",
+  player: "❓",
+}
+
 function getComputerChoice() {
   const rpc = Object.getOwnPropertyNames(choices);
   return rpc[Math.floor(Math.random() * rpc.length)];

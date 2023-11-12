@@ -57,3 +57,6 @@ class CountDown {
     this.intervalId = setInterval(this.#updateTimer.bind(this), this.intervalTimeout);
   }
 }
+
+
+export { CountDown }

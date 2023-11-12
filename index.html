@@ -91,6 +91,13 @@
 			</section>
 		</main>
 
+		<dialog class="modal">
+			<div class="modal__container">
+				<p class="clr-text-dark fw-bold" id="finalResult"></p>
+				<button class="btn btn--newGame" id="newGameBtn">Play Again!</button>
+			</div>
+		</dialog>
+
 		<!-- <script src="js/app.js"></script> -->
 		<script src="js/move-paragraph.js"></script>
 		<script src="js/down-button.js"></script>
@@ -113,9 +120,35 @@
 				countdownEl.classList.add("display-none");
 				countdownEl.classList.remove("animateCountdown");
 			};
+			const modal = document.querySelector(".modal");
+			const modalDelay = getComputedStyle(document.documentElement)
+				.getPropertyValue("--curtain-animation-speed")
+				.replace("ms", "");
+
 			paper.onclick = () => {
+				modal.querySelector("p").textContent = "Trying Modal Out";
+				modal.showModal();
+
 				document.body.classList.add("dropCurtains");
+				document.body.classList.remove("openCurtains");
+
+				setTimeout(() => {
+					modal.classList.add("dropModal");
+				}, modalDelay);
 			};
+
+			modal.addEventListener("close", () => {
+				modal.close();
+				modal.classList.remove("dropModal");
+				document.body.classList.add("openCurtains");
+				document.body.classList.remove("dropCurtains");
+			});
+
+			modal.addEventListener("click", (e) => {
+				if (e.target === modal) {
+					modal.close();
+				}
+			});
 		</script>
 	</body>
 </html>

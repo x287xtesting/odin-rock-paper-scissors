@@ -1,0 +1,29 @@
+.modal {
+	margin: revert;
+	padding: 0;
+	border: none;
+	outline: none;
+	width: 90%;
+	max-width: 20ch;
+	box-shadow: 0 0 1em rgb(0, 0, 0, 0.2);
+	background-color: rgba(var(--clr-text-accent-rgb), 0.7);
+	backdrop-filter: blur(1em);
+	transform: translateY(-100vh);
+	transition: transform var(--modal-animation-speed)
+		cubic-bezier(0.29, 1.53, 0.58, 1);
+
+	border-radius: 0.25rem;
+
+	&__container {
+		padding: 1em;
+		display: grid;
+		gap: var(--gap);
+	}
+}
+
+.modal.dropModal {
+	transform: translateY(0);
+}
+.modal::backdrop {
+	background-color: transparent;
+}

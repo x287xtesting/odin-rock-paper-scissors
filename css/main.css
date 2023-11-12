@@ -26,7 +26,8 @@
   --gap-small: 0.75em;
   --gap-smallest: 0.25em;
   --countdown-speed: 500ms;
-  --curtain-animation-speed: 800ms;
+  --curtain-animation-speed: 700ms;
+  --modal-animation-speed: 350ms;
 }
 @media (min-width: 50.0625rem) {
   :root {
@@ -119,6 +120,10 @@ h1,
 
 .clr-dark-red {
   color: var(--clr-dark-red);
+}
+
+.clr-txt-dark {
+  color: var(--bg-clr-body);
 }
 
 em {
@@ -313,6 +318,7 @@ section {
   cursor: pointer;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+  font-family: inherit;
 }
 .btn--emoji {
   background-color: var(--bg-clr-card);
@@ -377,6 +383,16 @@ section {
   .btn--bounce {
     display: none;
   }
+}
+.btn--newGame {
+  padding: 0.75em 1.5em;
+  border: 2px solid var(--bg-clr-body);
+  font-weight: var(--fw-bold);
+  transition: all 100ms ease-in-out;
+}
+.btn--newGame:hover {
+  background-color: var(--bg-clr-body);
+  color: var(--clr-text-accent);
 }
 
 @keyframes animateBtn {
@@ -505,6 +521,33 @@ body.openCurtains::after {
   100% {
     transform: translateX(0);
   }
+}
+.modal {
+  margin: revert;
+  padding: 0;
+  border: none;
+  outline: none;
+  width: 90%;
+  max-width: 20ch;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  background-color: rgba(var(--clr-text-accent-rgb), 0.7);
+  backdrop-filter: blur(1em);
+  transform: translateY(-100vh);
+  transition: transform var(--modal-animation-speed) cubic-bezier(0.29, 1.53, 0.58, 1);
+  border-radius: 0.25rem;
+}
+.modal__container {
+  padding: 1em;
+  display: grid;
+  gap: var(--gap);
+}
+
+.modal.dropModal {
+  transform: translateY(0);
+}
+
+.modal::backdrop {
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=main.css.map */

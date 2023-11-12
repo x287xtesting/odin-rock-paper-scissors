@@ -326,6 +326,7 @@ section {
   display: grid;
   place-content: center;
   transition: background-color 100ms ease-in-out;
+  border-radius: 0.25rem;
 }
 .btn--emoji:is(:focus-visible) {
   background-color: var(--bg-clr-card-focus);

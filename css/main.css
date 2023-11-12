@@ -449,6 +449,29 @@ body.dropCurtains::after {
   animation: bounce-right var(--curtain-animation-speed) ease-in-out forwards;
 }
 
+body.openCurtains::before {
+  animation: open-left-curtain calc(var(--curtain-animation-speed) * 0.5);
+}
+body.openCurtains::after {
+  animation: open-right-curtain calc(var(--curtain-animation-speed) * 0.5);
+}
+
+@keyframes open-left-curtain {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes open-right-curtain {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
 @keyframes bounce-left {
   20% {
     transform: translateX(0);

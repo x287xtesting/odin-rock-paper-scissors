@@ -22,12 +22,14 @@ body {
 
 body.dropCurtains {
 	&::before {
-		animation: bounce-left 1s ease-in-out forwards;
+		animation: bounce-left var(--curtain-animation-speed) ease-in-out forwards;
 	}
 	&::after {
-		animation: bounce-right 1s ease-in-out forwards;
+		animation: bounce-right var(--curtain-animation-speed) ease-in-out forwards;
 	}
 }
+
+
 
 @keyframes bounce-left {
 	20% {

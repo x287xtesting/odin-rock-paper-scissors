@@ -26,6 +26,7 @@
   --gap-small: 0.75em;
   --gap-smallest: 0.25em;
   --countdown-speed: 500ms;
+  --curtain-animation-speed: 800ms;
 }
 @media (min-width: 50.0625rem) {
   :root {
@@ -442,10 +443,10 @@ body::after {
 }
 
 body.dropCurtains::before {
-  animation: bounce-left 1s ease-in-out forwards;
+  animation: bounce-left var(--curtain-animation-speed) ease-in-out forwards;
 }
 body.dropCurtains::after {
-  animation: bounce-right 1s ease-in-out forwards;
+  animation: bounce-right var(--curtain-animation-speed) ease-in-out forwards;
 }
 
 @keyframes bounce-left {

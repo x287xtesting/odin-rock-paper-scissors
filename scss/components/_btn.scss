@@ -8,6 +8,9 @@
 	padding: 0;
 	-webkit-tap-highlight-color: transparent;
 	font-family: inherit;
+	&::selection {
+		color: inherit;
+	}
 
 	&--emoji {
 		background-color: var(--bg-clr-card);
@@ -72,7 +75,7 @@
 	}
 
 	&--newGame {
-		font-size: .75em;
+		font-size: 0.75em;
 		padding: 0.75em 1.5em;
 		border: 2px solid var(--bg-clr-body);
 		font-weight: var(--fw-bold);
@@ -84,7 +87,7 @@
 		}
 	}
 
-	&#cancelModal{
+	&#cancelModal {
 		font-size: 1em;
 		justify-self: end;
 	}

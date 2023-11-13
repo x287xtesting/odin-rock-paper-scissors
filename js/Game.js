@@ -17,20 +17,22 @@ class Game {
    * 
    * @param {string} computerChoice - lowercase random rock paper or scissors
    * @param {string} playerChoice - lowercase emoji button id
-   * @returns {number} 1 for winning / 0 for draw / -1 for losing
+   * @returns {string} win / tie / lose
    */
-  static playRound(playerChoice, computerChoice) {
+  playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-      return 0;
+      return "tie";
     }
     else if (
       (playerChoice == "rock" && computerChoice == "scissors") ||
       (playerChoice == "scissors" && computerChoice == "paper") ||
       (playerChoice == "paper" && computerChoice == "rock")
     ) {
-      return 1;
+      this.incrementPlayerScore();
+      return "win";
     } else {
-      return - 1;
+      this.incrementComputerScore();
+      return "lose";
     }
   }
 }

@@ -386,14 +386,19 @@ section {
   }
 }
 .btn--newGame {
+  font-size: 0.75em;
   padding: 0.75em 1.5em;
   border: 2px solid var(--bg-clr-body);
   font-weight: var(--fw-bold);
   transition: all 100ms ease-in-out;
 }
-.btn--newGame:hover {
+.btn--newGame:is(:hover, :active) {
   background-color: var(--bg-clr-body);
   color: var(--clr-text-accent);
+}
+.btn#cancelModal {
+  font-size: 1em;
+  justify-self: end;
 }
 
 @keyframes animateBtn {

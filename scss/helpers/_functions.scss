@@ -1,0 +1,9 @@
+@use "sass:math";
+
+@function rem($number) {
+  @if math.is-unitless($number) {
+      @return calc($number / 16) + rem;
+  } @else {
+      @error "Number #{$number} must be unitless.";
+  }
+}

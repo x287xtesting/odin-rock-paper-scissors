@@ -1,0 +1,19 @@
+@use "./mixins" as m;
+
+.align-center {
+	display: flex;
+	align-items: center;
+}
+
+.justify-center {
+	display: flex;
+	justify-content: center;
+}
+
+.gap-smallest {
+	gap: var(--gap-smallest);
+}
+
+.display-none {
+	display: none;
+}

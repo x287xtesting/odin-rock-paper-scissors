@@ -4,6 +4,9 @@ function getComputerChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
+// I'll have the playRound() function return an object with all the 
+// results I need with the score and everything
+
 /**
  * @param {string} playerSelection
  * @param {string} computerSelection
@@ -36,30 +39,3 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-function game() {
-  let playerScore = 0, computerScore = 0;
-  for (let i = 0; i < 5; i++) {
-    let playerSelection;
-    while (!playerSelection || !choices.map(choice => choice.toLocaleLowerCase()).includes(playerSelection.toLocaleLowerCase())) {
-      playerSelection = prompt("Enter Paper, Rock, or Scissors: ");
-    }
-
-    const result = playRound(playerSelection, getComputerChoice());
-    if (result.includes("You Win"))
-      playerScore++;
-    else if (result.includes("You Lose"))
-      computerScore++;
-    console.log(result);
-  }
-
-  if (playerScore > computerScore) {
-    console.log("You Won the Game!");
-  } else if (computerScore > playerScore) {
-    console.log("You Lost! and Computer Won the Game");
-  } else {
-    console.log("It's a Draw!");
-  }
-
-}
-
-game();

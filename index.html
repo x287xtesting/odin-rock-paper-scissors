@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Rock Paper Scissors</title>
-		<script src="app.js"></script>
-	</head>
-	<body>
-        
-    </body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Rock Paper Scissors</title>
+	<link rel="stylesheet" href="/css/main.css" />
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&family=Roboto+Mono:wght@400;700&display=swap"
+		rel="stylesheet" />
+</head>
+
+<body>
+	<main class="container scroller">
+		<section class="intro">
+			<h1>Rock Paper Scissors</h1>
+			<p id="toBeMoved">
+				You have <em>three</em> seconds to choose your weapon of choice, the
+				first to score <em>five</em> points wins.
+			</p>
+			<button id="downBtn" class="fs-emoji btn btn--bounce">👇</button>
+		</section>
+		<section class="grid" id="scrollIntoView">
+			<div id="moveDestination" class="grid__column grid__column--text">
+				<div class="grid__column--text__result-container">
+					<p class="fs-large clr-accent" id="resultMesssage"></p>
+					<p>
+						<span class="clr-player fs-large fw-bold ff-secondary" id="playerSelection"></span>
+						<span id="betweenSelections"></span>
+						<span class="clr-computer fs-large fw-bold ff-secondary" id="computerSelection"></span>
+					</p>
+				</div>
+				<div class="grid__column--text__score-container ff-secondary">
+					<div class="grid__column--text__score-container__score">
+						<span id="playerEmoji" class="fs-emoji">😢</span>
+						<div class="align-center justify-center gap-smallest">
+							<span class="fw-light">You</span>
+							<span class="fw-bold">:</span>
+							<span id="playerScore" class="clr-player fw-bold fs-large">❓</span>
+						</div>
+					</div>
+					<div class="grid__column--text__score-container__score">
+						<span id="computerEmoji" class="fs-emoji">🤖</span>
+						<div class="align-center justify-center gap-smallest">
+							<span class="fw-light">Computer</span>
+							<span class="fw-bold">:</span>
+							<span id="computerScore" class="clr-computer fw-bold fs-large">❔</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="grid__column grid__column--buttons" id="buttons">
+				<button class="btn btn--emoji fs-emoji" id="rock">🪨</button>
+				<button class="btn btn--emoji fs-emoji" id="paper">🗞️</button>
+				<button class="btn btn--emoji fs-emoji" id="scissors">✂️</button>
+				<div class="grid__column--buttons__play-button-wrapper">
+					<button class="btn btn--play clr-accent" id="playBtn">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+							<path d="M311.869-185.413v-589.174L775.066-480 311.869-185.413Z" />
+						</svg>
+					</button>
+				</div>
+				<div class="grid__column--buttons__play-button-wrapper">
+					<span class="clr-dark-red fs-large fw-bold display-none" id="countdownSpan">
+					</span>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<dialog id="modal" class="modal">
+		<div class="modal__container">
+			<p class="clr-text-dark fw-bold" id="finalResult"></p>
+			<button class="btn btn--newGame" id="newGameBtn">Play Again!</button>
+			<button class="btn" id="cancelModal">&larr;</button>
+		</div>
+	</dialog>
+
+	<script src="js/index.js" type="module"></script>
+	<script src="js/move-paragraph.js"></script>
+	<script src="js/down-button.js"></script>
+</body>
+
 </html>

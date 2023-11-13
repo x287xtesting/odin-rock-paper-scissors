@@ -1,0 +1,52 @@
+@use "sass:math";
+@use "./functions" as f;
+
+$tablet-breakpoint: 800;
+$desktop-breakpoint: 1200;
+
+@mixin tablet-up {
+	@media (min-width: f.rem(calc($tablet-breakpoint + 1))) {
+		@content;
+	}
+}
+
+@mixin tablet-down {
+	@media (max-width: f.rem($tablet-breakpoint)) {
+		@content;
+	}
+}
+
+@mixin desktop-up {
+	@media (min-width: f.rem($desktop-breakpoint + 1)) {
+		@content;
+	}
+}
+@mixin bounce {
+	animation: bounce 1s infinite;
+	@keyframes bounce {
+		0%,
+		100% {
+			transform: translateY(-25%);
+			-webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+		}
+		50% {
+			transform: none;
+			-webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+			animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		}
+	}
+}
+
+@mixin hide-scroll-bar {
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge and Firefox */
+	& {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+}

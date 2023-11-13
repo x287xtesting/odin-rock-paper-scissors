@@ -1,0 +1,60 @@
+@use "./mixins" as m;
+
+:root {
+	--bg-clr-body: #272829;
+	--bg-clr-body-rgb: 39, 40, 41;
+	--bg-clr-card: #61677a;
+	--bg-clr-card-focus: hsl(226, 11%, 35%);
+	--bg-clr-card-hover: #6d707e;
+
+	--clr-text-primary: #d8d9da;
+	--clr-text-primary-rgb: 216, 217, 218;
+
+	--clr-text-accent: #fff6e0;
+	--clr-text-accent-rgb: 255, 246, 224;
+
+	--clr-player: #f96666;
+	--clr-dark-red: red;
+	--clr-computer: #ea906c;
+
+	--ff-primary: "Roboto Mono", monospace;
+	--ff-secondary: "Poppins", sans-serif;
+
+	--fw-extra-light: 200;
+	--fw-light: 300;
+	--fw-regular: 400;
+	--fw-bold: 700;
+
+	--line-height: 1.5;
+
+	--padding-inline: 1rem;
+	@include m.tablet-up {
+		--padding-inline: 4em;
+	}
+
+	--fs-large: 1.75rem;
+	--fs-paragraph: 1.5rem;
+	--fs-emoji: 3rem;
+	--fs-score: 3rem;
+
+	@include m.tablet-up {
+		--fs-large: 2rem;
+		--fs-emoji: 3.75rem;
+	}
+
+	@include m.desktop-up {
+		--fs-paragraph: calc(2rem * 0.9);
+		--fs-large: calc(3rem * 0.9);
+		--fs-emoji: calc(5rem * 0.9);
+		--fs-score: calc(4rem * 0.9);
+	}
+
+	--gap: 1em;
+	--gap-small: 0.75em;
+	--gap-smallest: 0.25em;
+
+	--countdown-speed: 500ms;
+
+	--curtain-animation-speed: 700ms;
+	--modal-animation-speed: 350ms;
+}

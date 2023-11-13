@@ -1,0 +1,91 @@
+body {
+	background-color: var(--bg-clr-body);
+	font-family: var(--ff-primary);
+	color: var(--clr-text-primary);
+	line-height: var(--line-height);
+	font-size: var(--fs-paragraph);
+}
+
+h1 {
+	font-size: var(--fs-large);
+	font-family: var(--ff-secondary);
+}
+
+h1 {
+	color: var(--clr-text-accent);
+	text-align: center;
+}
+
+h1,
+.fs-large,
+.fs-score {
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	line-height: 1;
+}
+
+.fs-score {
+	font-size: var(--fs-score);
+}
+
+.fs-emoji {
+	font-size: var(--fs-emoji);
+}
+
+.fs-large {
+	font-size: var(--fs-large);
+}
+
+.ff-secondary {
+	font-family: var(--ff-secondary);
+}
+
+.fw-bold {
+	font-weight: var(--fw-bold);
+}
+
+.fw-light {
+	font-weight: var(--fw-light);
+}
+
+.clr-computer {
+	color: var(--clr-computer);
+}
+
+.clr-player {
+	color: var(--clr-player);
+}
+
+.clr-accent {
+	color: var(--clr-text-accent);
+}
+
+.clr-dark-red {
+	color: var(--clr-dark-red);
+}
+
+.clr-txt-dark {
+	color: var(--bg-clr-body);
+}
+
+em {
+	font-weight: var(--fw-bold);
+	color: var(--clr-text-accent);
+	font-style: normal;
+}
+
+h1,
+span,
+p {
+	&::selection {
+		background-color: var(--clr-player);
+	}
+}
+
+.clr-computer,
+.clr-player,
+em {
+	&::selection {
+		background-color: var(--bg-clr-card);
+	}
+}
